@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Athira</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <!-- Loading Screen -->
+  <div id="loading-screen">
+    <div class="loading-content">
+      <i class="fa-solid fa-laptop-code fa-5x main-icon hidden"></i>
+      <h1 id="loading-text" class="hidden">MY PROFILE</h1>
+      <div class="sub-icons">
+        <i class="fa-brands fa-github fa-2x hidden"></i>
+        <i class="fa-solid fa-brain fa-2x hidden"></i>
+        <i class="fa-solid fa-database fa-2x hidden"></i>
+      </div>
+      <h2 id="designer-text" class="hidden">Designed by Athousai</h2>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header-list">
+    <div class="div-list">
+      <ul class="ul-list">
+       <li class="active"><i class="fa-solid fa-house"></i><a href="#home">Home</a></li>
+       <li><i class="fa-regular fa-address-card"></i><a href="#about">About</a></li>
+       <li><i class="fa-regular fa-folder-open"></i><a href="#projects">Projects</a></li>
+       <li><i class="fa-solid fa-briefcase"></i><a href="#experience">Experience</a></li>
+       <li><i class="fa-solid fa-certificate"></i><a href="#certifications">Certifications</a></li>
+     </ul>
+    </div>
+  </header>
+
+  <!-- Home -->
+  <section class="home" id="home">
+   
+    <div class="home-container">
+      <div class="home-section">
+        <div class="info-home">
+          <h1>Hi, I'm Athira Raj</h1>
+          <h3>AI/ML Engineer | Java Enthusiast | Data Analyst</h3>
+          <div class="info-p">
+            <p>Passionate about Artificial Intelligence, Machine Learing and Data Science.</p>
+            <p>My interest lie in transforming data into meaningful insights and </p>
+            <p>developing innovative technologies that create impact</p>
+          </div>
+          <div class="info-p2">
+            <p><i class="fa-solid fa-location-dot"></i> Kochi</p>
+            <p><i class="fa-solid fa-briefcase"></i> Available Now</p>
+          </div>
+          <div class="btnn">
+           <a href="Athira_Raj.pdf" download class="btn-home2">
+  <i class="fa-solid fa-download"></i> Download CV
+</a>
+ 
+           
+          </div>
+          <div class="hhr"><hr></div>
+          <div class="follow">
+            <p class="followw">Follow me:</p>
+            <ul>
+              <li><a href="https://github.com/athi-raj" target="_blank"><i class="fa-brands fa-github"></i></a></li>
+              <li><a href="https://www.linkedin.com/in/athirah-raj/" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
+               <li><a href="https://www.instagram.com/athi_raj._/" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <img src="images/prof.png" alt="Athira Raj">
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about" id="about">
+    <p>ABOUT ME</p>
+    <div class="title">
+      <h1>Creating Intelligent</h1>
+      <h1>and Beautiful Digital Experiences</h1>
+    </div>
+    <div class="hrrr"><hr></div>
+    <div class="about-container">
+      <div class="info-about">
+        <div class="info-p">
+          <p>
+            I am Athira Raj, a Computer Science and Engineering graduate with a strong interest in Artificial Intelligence, Machine Learning, and Data Science. My curiosity about how data can be transformed into meaningful insights inspired me to explore these fields and build practical solutions.
+          </p>
+          <p>
+           Throughout my academic journey, I have worked on projects involving AI and data-driven technologies while continuously improving my skills in programming, analytics, and problem-solving. I enjoy learning emerging technologies and applying them to solve real-world challenges.
+           My goal is to build a career in AI, Machine Learning, and Data Analytics, where I can contribute to innovative solutions while continuing to grow as a technology professional.
+          </p>
+        </div>
+
+        <h2>What Drives Me</h2>
+        <div class="card">
+          <div class="c1">
+            <h3><i class="fa-solid fa-code"></i> Skills</h3>
+            <p>Python, ML/DL, Artificial Intelligence, MySQL, Java, Excel, Figma, PowerBI, JavaScript, Tableau </p>
+          </div>
+          <div class="c1">
+            <h3><i class="fa-solid fa-graduation-cap"></i> Education</h3>
+            <p>Bachelor of Technology (B.Tech)</p>
+            <p>Carmel College of Engineering and Technology, Alappuzha </p>
+            <p>Computer Science and Engineering</p>
+          
+          </div>
+          <div class="c1">
+            <h3><i class="fa-solid fa-folder-open"></i> Projects</h3>
+            <p>Subtiq AI, Heart Disease Predictor, Resume Builder, Movie Success Prediction Website, Nexus E-Learning App </p>
+          </div>
+        </div> 
+      </div>
+    
+    </div>
+  </section>
+
+  <!-- Projects -->
+<section class="projects" id="projects">
+  <p>PROJECTS</p>
+  <h1>Featured Work</h1>
+  <hr>
+  <div class="info-pro">
+    <p>Some of my key projects showcasing innovation, design, and machine learning excellence.</p>
+  </div>
+
+  <div class="projects-container">
+
+    <!-- Project 1 -->
+    <div class="project-card">
+      <img src="images/subtiq-ai.png" alt="Substiq AI">
+      <h3>Subtiq AI – Substance Use Prediction Among Youngsters</h3>
+      <p>An AI-powered web application for early substance abuse risk prediction among youngsters. The system was trained on a self-collected dataset of over 75,000 records gathered from young patients and trained using the machine learning models CatBoost, Random Forest, and Logistic Regression.
+      Among all the models tested, the Random Forest algorithm achieved the highest accuracy of 99%, making it the best-performing model for risk prediction. The application was developed using Flask and Ngrok for secure deployment and accessibility.</p>
+      <div class="skills">
+        <a href="#">Python</a>
+        <a href="#">Flask</a>
+        <a href="#">CatBoost</a>
+        <a href="#">Machine Learning</a>
+        <a href="#">Data Analysis</a>
+      </div>
+      <div class="btns">
+        <a href="https://github.com/athi-raj/SubtiQ-AI" target="_blank" class="btn">
+          <i class="fab fa-github"></i> GitHub
+       </a>
+      </div>
+    </div>
+      <!-- Project 3 -->
+<div class="project-card">
+  <img src="images/disease-output.png" alt="Heart Disease Predictor">
+  <h3>Heart Disease Predictor — Explainable AI</h3>
+  <p>
+    An explainable AI based Heart Disease Prediction System using Deep Learning techniques and UCI Heart Disease dataset.
+    Analyzes patients cardiovascular data and classifies risk into Low, Moderate, or High using a neural network.Integrates SHAP Explainable AI to identify
+    and visualize the key factors contributing each predictions, improving transparency.
+  </p>
+  <div class="skills">
+    <a href="#">Explainable AI</a>
+    <a href="#">TensorFlow</a>
+    <a href="#">Keras</a>
+    <a href="#">SHAP</a>
+    <a href="#">SMOTE</a>
+    <a href="#">scikit-learn</a>
+    <a href="#">Deep Learning</a>
+  </div>
+  <div class="btns">
+    <a href="https://github.com/athi-raj/Heart-Disease-Predictor" target="_blank" class="btn">
+      <i class="fab fa-github"></i> GitHub
+    </a>
+    <a href="https://colab.research.google.com/drive/1h-ywzkRNOZDsp1NOk18sucCMg7qDIYsX?usp=sharing" target="_blank" class="btn">
+      <i class="fas fa-external-link-alt"></i> Colab
+    </a>
+  </div>
+</div>
+
+    <!-- Project 2 -->
+    <div class="project-card">
+      <img src="images/resume-builder.png" alt="Resume Builder Web App">
+      <h3>Resume Builder Web Application</h3>
+      <p>A web app that allows users to design and download resumes in multiple formats (PDF, DOCX, TXT)
+        with one-click export. Includes real-time autosave, cloud sync, and customizable templates
+        while maintaining ATS-friendly structures.</p>
+      <div class="skills">
+        <a href="#">HTML</a>
+        <a href="#">Tailwind CSS</a>
+        <a href="#">JavaScript</a>
+        <a href="#">Next.js</a>
+      </div>
+      <div class="btns">
+        <a href="https://github.com/athi-raj/resumebuilder/tree/main" target="_blank" class="btn">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+      </div>
+    </div>
+
+
+
+    <!-- <!-- Project 4 -->
+    <div class="project-card">
+      <img src="images/nexus.png" alt="Nexus E-Learning App">
+      <h3>Nexus – E-Learning Web App</h3>
+      <p>A responsive and interactive e-learning platform designed to help students learn effectively
+        through structured courses, personalized dashboards, and an intuitive interface.</p>
+      <div class="skills">
+        <a href="#">Figma</a>
+        <a href="#">Photoshop</a>
+      </div>
+      <div class="btns">
+        <a href="https://github.com/athi-raj/e-learning-app" target="_blank" class="btn">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+      </div>
+    </div> -->
+
+    <!-- Project 5 -->
+    <div class="project-card">
+      <img src="images/movie-pred.png" alt="Movie Success Prediction">
+      <h3>Movie Success Prediction</h3>
+      <p>A machine learning model that predicts whether a movie will be a hit or flop based on
+        budget, cast, director, genre, and release details. Built with Random Forest, includes
+        automated preprocessing and real-time prediction via Joblib deployment.</p>
+      <div class="skills">
+        <a href="#">Python</a>
+        <a href="#">Pandas</a>
+        <a href="#">Scikit-learn</a>
+        <a href="#">Seaborn</a>
+        <a href="#">Machine Learning</a>
+      </div>
+      <div class="btns">
+        <a href="https://colab.research.google.com/drive/15p-5dBwMsFYOZpI1HC8xWgz2QRndXRQR" target="_blank" class="btn">
+          <i class="fas fa-external-link-alt"></i> View Notebook
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  
+  <!-- Experience -->
+<section class="certifications" id="experience">
+  <p>EXPERIENCE</p>
+  <h1>Work & Internships</h1>
+  <hr>
+  <div class="info-pro">
+    <p>Professional experience and internships in AI, data, and technology.</p>
+  </div>
+
+  <div class="cert-container">
+
+    <div class="cert-card">
+      <div class="cert-icon"><i class="fa-solid fa-building"></i></div>
+      <div class="cert-body">
+        <div class="cert-issuer">Company Name · Internship</div>
+        <div class="cert-title">Role Title — e.g. AI/ML Intern</div>
+        <div class="cert-date">June 2024 – August 2024</div>
+      </div>
+      <div class="cert-badge">Full Time</div>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-icon"><i class="fa-solid fa-laptop-code"></i></div>
+      <div class="cert-body">
+        <div class="cert-issuer">Company Name · Internship</div>
+        <div class="cert-title">Role Title — e.g. Data Analyst Intern</div>
+        <div class="cert-date">Jan 2024 – March 2024</div>
+      </div>
+      <div class="cert-badge">Remote</div>
+    </div>
+
+  </div>
+</section>
+
+  <!-- Certifications -->
+<section class="certifications" id="certifications">
+  <p>CERTIFICATIONS</p>
+  <h1>Licenses & Credentials</h1>
+  <hr>
+  <div class="info-pro">
+    <p>Professional certifications and completed courses across AI, data, and technology.</p>
+  </div>
+
+  <div class="cert-container">
+
+    <div class="cert-card">
+      <div class="cert-icon"><i class="fa-brands fa-google"></i></div>
+      <div class="cert-body">
+        <div class="cert-issuer">Google</div>
+        <div class="cert-title">Google Data Analytics Professional Certificate</div>
+        <div class="cert-date">2024</div>
+      </div>
+      <div class="cert-badge">Verified</div>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-icon"><i class="fa-solid fa-brain"></i></div>
+      <div class="cert-body">
+        <div class="cert-issuer">DeepLearning.AI</div>
+        <div class="cert-title">Machine Learning Specialization</div>
+        <div class="cert-date">2024</div>
+      </div>
+      <div class="cert-badge">Verified</div>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-icon"><i class="fa-solid fa-database"></i></div>
+      <div class="cert-body">
+        <div class="cert-issuer">IBM</div>
+        <div class="cert-title">Data Science Professional Certificate</div>
+        <div class="cert-date">2024</div>
+      </div>
+      <div class="cert-badge">Verified</div>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-icon"><i class="fa-brands fa-python"></i></div>
+      <div class="cert-body">
+        <div class="cert-issuer">Coursera</div>
+        <div class="cert-title">Python for Everybody Specialization</div>
+        <div class="cert-date">2023</div>
+      </div>
+      <div class="cert-badge">Verified</div>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-icon"><i class="fa-solid fa-chart-line"></i></div>
+      <div class="cert-body">
+        <div class="cert-issuer">Microsoft</div>
+        <div class="cert-title">Power BI Data Analyst Associate</div>
+        <div class="cert-date">2024</div>
+      </div>
+      <div class="cert-badge">Verified</div>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-icon"><i class="fa-solid fa-network-wired"></i></div>
+      <div class="cert-body">
+        <div class="cert-issuer">NPTEL</div>
+        <div class="cert-title">Deep Learning — IIT Madras</div>
+        <div class="cert-date">2023</div>
+      </div>
+      <div class="cert-badge">Verified</div>
+    </div>
+
+  </div>
+
+  <!-- Contact Strip -->
+  <div class="contact-strip">
+    <div class="contact-strip-text">
+      <h3>Let's Work Together</h3>
+      <p>Open to AI, ML, data, and design collaborations. Reach out anytime.</p>
+    </div>
+    <div class="contact-strip-links">
+      <a href="mailto:athiathiraraj06@gmail.com" class="strip-link">
+        <i class="fa-solid fa-envelope"></i>
+        athiathiraraj06@gmail.com
+      </a>
+      <a href="https://www.linkedin.com/in/athirah-raj/" target="_blank" class="strip-link">
+        <i class="fa-brands fa-linkedin"></i>
+        LinkedIn
+      </a>
+      <a href="https://github.com/athi-raj" target="_blank" class="strip-link">
+        <i class="fa-brands fa-github"></i>
+        GitHub
+      </a>
+    </div>
+  </div>
+
+</section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <h2 class="footer-logo">Athousai</h2>
+      <ul class="footer-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#services">Experiences</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+      </ul>
+      <div class="footer-social">
+        <a href="https://github.com/athi-raj" target="_blank"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/athirah-raj/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
+      <p class="footer-copy">&copy; 2025 Athira Raj. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
