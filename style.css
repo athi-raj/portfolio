@@ -945,6 +945,219 @@ hr { width: 90%; border-color: var(--border); }
     flex-direction: column;
     gap: 12px;
   }
+  /* ── CERTIFICATIONS ── */
+.certifications {
+  margin: 160px 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.certifications > p {
+  font-size: 11px;
+  color: var(--blue);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.certifications h1 {
+  font-family: "Montserrat", sans-serif;
+  color: var(--white);
+  font-size: 36px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.certifications hr {
+  width: 60px;
+  border: none;
+  height: 3px;
+  background: linear-gradient(90deg, var(--blue), transparent);
+}
+
+.cert-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  max-width: 1000px;
+  width: 100%;
+  margin: 30px auto 0;
+}
+
+.cert-card {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 22px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.cert-card::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: var(--blue);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.cert-card:hover {
+  border-color: var(--blue);
+  box-shadow: 0 0 20px var(--blue-glow);
+  transform: translateX(6px);
+  background: var(--blue-dim);
+}
+
+.cert-card:hover::before { opacity: 1; }
+
+.cert-icon {
+  font-size: 28px;
+  color: var(--blue);
+  min-width: 40px;
+  text-align: center;
+  opacity: 0.85;
+}
+
+.cert-body { flex: 1; }
+
+.cert-issuer {
+  font-size: 10px;
+  color: var(--blue);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 4px;
+}
+
+.cert-title {
+  font-size: 13px;
+  color: var(--white);
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 4px;
+}
+
+.cert-date {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.cert-badge {
+  font-size: 10px;
+  color: var(--blue);
+  background: rgba(0, 180, 255, 0.1);
+  border: 1px solid rgba(0, 180, 255, 0.3);
+  border-radius: 20px;
+  padding: 3px 10px;
+  white-space: nowrap;
+}
+
+/* ── CONTACT STRIP ── */
+.contact-strip {
+  max-width: 1000px;
+  width: 100%;
+  margin-top: 48px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-strip::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--blue), #0040ff, transparent);
+}
+
+.contact-strip-text h3 {
+  color: var(--white);
+  font-size: 20px;
+  margin-bottom: 6px;
+}
+
+.contact-strip-text p {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.contact-strip-links {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.strip-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--blue);
+  text-decoration: none;
+  font-size: 13px;
+  background: rgba(0, 180, 255, 0.08);
+  border: 1px solid rgba(0, 180, 255, 0.2);
+  border-radius: 25px;
+  padding: 8px 16px;
+  transition: all 0.3s;
+}
+
+.strip-link:hover {
+  background: var(--blue);
+  color: var(--bg);
+  box-shadow: 0 0 14px var(--blue-glow);
+  transform: translateY(-2px);
+  border-color: var(--blue);
+}
+
+/* Responsive certifications */
+@media (max-width: 1024px) {
+  .certifications {
+    margin: 20px auto;
+    padding: 40px 20px;
+  }
+
+  .cert-container {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-strip {
+    flex-direction: column;
+    text-align: center;
+    padding: 24px 20px;
+  }
+
+  .contact-strip-links {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .certifications {
+    margin: 60px 0;
+    padding: 30px 16px;
+  }
+
+  .strip-link {
+    width: 100%;
+    justify-content: center;
+  }
+}
 
   .info-home h1 { font-size: 28px; }
   .info-home h3 { font-size: 15px; }
