@@ -49,7 +49,7 @@ window.addEventListener('scroll', () => {
 
 // ── Reveal elements ──
 const revealElements = document.querySelectorAll(
-  '.home-container, .about-container, .projects-container, .services-container, .cert-container, .contact-strip'
+  '.home-container, .about-container, .projects-container, .cert-container, .contact-strip'
 );
 revealElements.forEach(el => el.classList.add('reveal'));
 
@@ -85,14 +85,10 @@ backToTop.addEventListener('mouseover', () => backToTop.style.transform = 'scale
 backToTop.addEventListener('mouseout',  () => backToTop.style.transform = 'scale(1)');
 
 // ── Hover effects ──
-const cards = document.querySelectorAll('.project-card, .c1, .service-card, .cert-card');
+const cards = document.querySelectorAll('.project-card, .c1, .cert-card');
 cards.forEach(card => {
   card.addEventListener('mouseenter', () => {
     card.style.transition = 'transform 0.3s ease';
-    card.style.transform = 'translateY(-8px)';
-  });
-  card.addEventListener('mouseleave', () => {
-    card.style.transform = 'translateY(0)';
   });
 });
 
@@ -120,6 +116,60 @@ function type() {
     setTimeout(type, 1000);
   }
 }
+
+// ── Certificate Modal ──
+function viewCert(url) {
+  const modal   = document.getElementById('cert-modal');
+  const content = document.getElementById('modal-content');
+
+  content.innerHTML = `<div class="modal-loading">⏳ Loading certificate...</div>`;
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+
+  const isImg = /\.(png|jpg|jpeg|webp|gif)$/i.test(url);
+  const isPdf = url.toLowerCase().includes('.pdf');
+
+  if (isImg) {
+    const img = new Image();
+    img.onload = () => {
+      content.innerHTML = `<img src="${url}" alt="Certificate"/>`;
+    };
+    img.onerror = () => certError(url);
+    img.src = url;
+  } else if (isPdf) {
+    content.innerHTML = `
+      <iframe
+        src="https://docs.google.com/viewer?url=${encodeURIComponent(url)}&embedded=true"
+        title="Certificate">
+      </iframe>`;
+  } else {
+    certError(url);
+  }
+}
+
+function closeCertModal() {
+  document.getElementById('cert-modal').classList.remove('open');
+  document.getElementById('modal-content').innerHTML = '';
+  document.body.style.overflow = '';
+}
+
+function closeModal(e) {
+  if (e.target.id === 'cert-modal') closeCertModal();
+}
+
+function certError(url) {
+  document.getElementById('modal-content').innerHTML = `
+    <div class="modal-error">
+      Could not preview this certificate.<br/>
+      <a href="${url}" target="_blank">
+        <i class="fa-solid fa-arrow-up-right-from-square"></i> Open Directly
+      </a>
+    </div>`;
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeCertModal();
+});
 
 // ── Loading screen ──
 document.addEventListener("DOMContentLoaded", () => {
