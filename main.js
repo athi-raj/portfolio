@@ -10,12 +10,7 @@ navLinks.forEach(link => {
     e.preventDefault();
     const targetId = link.getAttribute('href').substring(1);
     const targetSection = document.getElementById(targetId);
-
-    window.scrollTo({
-      top: targetSection.offsetTop - 80,
-      behavior: 'smooth'
-    });
-
+    window.scrollTo({ top: targetSection.offsetTop - 80, behavior: 'smooth' });
     removeActive();
     link.parentElement.classList.add('active');
   });
@@ -32,22 +27,16 @@ window.addEventListener('scroll', () => {
     }
   });
 
-  if (window.scrollY > 500) {
-    backToTop.style.display = "flex";
-  } else {
-    backToTop.style.display = "none";
-  }
+  backToTop.style.display = window.scrollY > 500 ? "flex" : "none";
 
   revealElements.forEach(el => {
-    const windowHeight = window.innerHeight;
-    const elementTop = el.getBoundingClientRect().top;
-    if (elementTop < windowHeight - 150) {
+    if (el.getBoundingClientRect().top < window.innerHeight - 150) {
       el.classList.add('active-reveal');
     }
   });
 });
 
-// ── Reveal elements ──
+// ── Reveal ──
 const revealElements = document.querySelectorAll(
   '.home-container, .about-container, .projects-container, .cert-container, .contact-strip'
 );
@@ -58,59 +47,30 @@ const backToTop = document.createElement('div');
 backToTop.innerHTML = '<i class="fa-solid fa-chevron-up"></i>';
 backToTop.id = "back-to-top";
 document.body.appendChild(backToTop);
-
 backToTop.style.cssText = `
-  position: fixed;
-  bottom: 40px;
-  right: 40px;
-  background: #00b4ff;
-  color: #0a0a0f;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 1000;
-  transition: transform 0.3s ease;
-  box-shadow: 0 0 16px rgba(0,180,255,0.4);
+  position:fixed; bottom:40px; right:40px;
+  background:#00b4ff; color:#0a0a0f;
+  width:50px; height:50px; border-radius:50%;
+  display:none; align-items:center; justify-content:center;
+  cursor:pointer; z-index:1000;
+  transition:transform 0.3s ease;
+  box-shadow:0 0 16px rgba(0,180,255,0.4);
 `;
-
-backToTop.addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-
+backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 backToTop.addEventListener('mouseover', () => backToTop.style.transform = 'scale(1.2)');
 backToTop.addEventListener('mouseout',  () => backToTop.style.transform = 'scale(1)');
-
-// ── Hover effects ──
-const cards = document.querySelectorAll('.project-card, .c1, .cert-card');
-cards.forEach(card => {
-  card.addEventListener('mouseenter', () => {
-    card.style.transition = 'transform 0.3s ease';
-  });
-});
 
 // ── Typing animation ──
 const typingElement = document.querySelector('.info-home h3');
 const words = ["AI/ML Engineer", "UI/UX Designer", "Java Enthusiast", "Data Analyst"];
-let wordIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
+let wordIndex = 0, charIndex = 0, isDeleting = false;
 
 function type() {
   const currentWord = words[wordIndex];
-  const displayedText = currentWord.substring(0, charIndex);
-  typingElement.innerHTML = displayedText + '<span class="cursor">|</span>';
-
-  if (!isDeleting && charIndex < currentWord.length) {
-    charIndex++;
-    setTimeout(type, 100);
-  } else if (isDeleting && charIndex > 0) {
-    charIndex--;
-    setTimeout(type, 50);
-  } else {
+  typingElement.innerHTML = currentWord.substring(0, charIndex) + '<span class="cursor">|</span>';
+  if (!isDeleting && charIndex < currentWord.length) { charIndex++; setTimeout(type, 100); }
+  else if (isDeleting && charIndex > 0) { charIndex--; setTimeout(type, 50); }
+  else {
     isDeleting = !isDeleting;
     if (!isDeleting) wordIndex = (wordIndex + 1) % words.length;
     setTimeout(type, 1000);
@@ -121,7 +81,6 @@ function type() {
 function viewCert(url) {
   const modal   = document.getElementById('cert-modal');
   const content = document.getElementById('modal-content');
-
   content.innerHTML = `<div class="modal-loading">⏳ Loading certificate...</div>`;
   modal.classList.add('open');
   document.body.style.overflow = 'hidden';
@@ -131,17 +90,11 @@ function viewCert(url) {
 
   if (isImg) {
     const img = new Image();
-    img.onload = () => {
-      content.innerHTML = `<img src="${url}" alt="Certificate"/>`;
-    };
+    img.onload = () => { content.innerHTML = `<img src="${url}" alt="Certificate"/>`; };
     img.onerror = () => certError(url);
     img.src = url;
   } else if (isPdf) {
-    content.innerHTML = `
-      <iframe
-        src="https://docs.google.com/viewer?url=${encodeURIComponent(url)}&embedded=true"
-        title="Certificate">
-      </iframe>`;
+    content.innerHTML = `<iframe src="https://docs.google.com/viewer?url=${encodeURIComponent(url)}&embedded=true" title="Certificate"></iframe>`;
   } else {
     certError(url);
   }
@@ -167,13 +120,10 @@ function certError(url) {
     </div>`;
 }
 
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') closeCertModal();
-});
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeCertModal(); });
 
 // ── Loading screen ──
 document.addEventListener("DOMContentLoaded", () => {
-
   type();
 
   const loadingText   = document.getElementById("loading-text");
@@ -182,15 +132,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const designerText  = document.getElementById("designer-text");
   const loadingScreen = document.getElementById("loading-screen");
 
-  function showElement(element, delay = 0) {
-    setTimeout(() => {
-      element.classList.remove("hidden");
-      element.classList.add("fall");
-    }, delay);
+  function showElement(el, delay = 0) {
+    setTimeout(() => { el.classList.remove("hidden"); el.classList.add("fall"); }, delay);
   }
 
-  showElement(loadingText,  0);
-  showElement(mainIcon,     800);
+  showElement(loadingText, 0);
+  showElement(mainIcon, 800);
   subIcons.forEach((icon, idx) => showElement(icon, 1600 + idx * 400));
   showElement(designerText, 2800);
 
@@ -198,5 +145,4 @@ document.addEventListener("DOMContentLoaded", () => {
     loadingScreen.style.opacity = '0';
     setTimeout(() => loadingScreen.style.display = 'none', 500);
   }, 4000);
-
 });
